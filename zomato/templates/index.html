@@ -1,0 +1,32 @@
+   {% extends 'theme.html' %}
+   {% block content %}
+   {% load static %}
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+   <link rel="stylesheet" href="{% static 'style.css' %}">
+  <div class="cotainer">
+    <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="{% static 'Image/image1.png' %}" alt="" style="width: 100%; height:10%;"></div>
+      <div class="swiper-slide"><img src="{% static 'Image/image2.png' %}" alt="" style="width: 100%; height:10%;"></div>
+    </div>
+  </div>
+</div>
+<div class="container">
+      <div class="row">
+        {% for a in data %}
+        <a href="{% url 'food' %}" style="text-decoration: none;">
+        <div class="card mr-6" style="width: 18rem;">
+          <img class="card-img-top" src={{a.image.url}} alt="Card image cap" style="height: 200px;">
+          <div class="card-body">
+            <h5 class="card-title">{{a.name}}</h5>
+            <p class="card-text">{{a.location}}</p>
+            <p class="card-text">rating:{{a.rating}}</p>
+          </div>
+        </div>
+      </a>
+        {% endfor %}
+        </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="{% static 'script.js' %}"></script>
+{% endblock %}

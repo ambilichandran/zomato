@@ -1,0 +1,30 @@
+{% extends 'theme.html' %}
+{% block content %}
+{% load static %}
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-header">
+            Details Form
+        </div>
+    <form class="form" method="post">
+        {% csrf_token %}
+    <div class="card-body" ml-5>
+        <div class="box">
+        <div>
+            {{form.name}}
+        </div>
+        <div>
+            {{form.address}}
+        </div>
+        <div>
+            {{form.phone}}
+        </div>
+        <div>
+            {{form.email}}
+        </div>
+        </div>
+    </div>
+    <button  class="btn btn-success" type="submit" >Place Order</button>
+    </form>
+</div>
+{% endblock %}

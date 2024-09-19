@@ -1,0 +1,15 @@
+{% extends 'theme.html' %}
+{% block content %}
+{% load static %}
+<div class="card mt-5">
+    <div class="card-header">
+      Login your Account
+    </div>
+<div class="card-body" ml-5>
+<form action="" method="post">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit" class="btn btn-outline-success">Create a account</button>
+</form>
+</div>
+{% endblock %}

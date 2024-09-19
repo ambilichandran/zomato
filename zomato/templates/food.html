@@ -1,0 +1,19 @@
+{% extends "theme.html" %}
+{% block content %}
+{% load static %}
+<div class="container">
+    <div class="row">
+    {%  for a in data %}
+    <div class="card mr-6" style="width: 18rem;">
+      <img class="card-img-top" src="{{a.food_image.url}}" alt="Card image cap" style="height: 250px;">
+      <div class="card-body">
+        <h5 class="card-title">{{a.food_name}}</h5>
+        <h6 class="card-text">₹:{{a.price}}</h6>
+        <p class="card-text">{{a.hotel_name}}</p>
+        <a href="{% url 'order_now' a.id %}" class="btn btn-primary">Order Now</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+  {% endblock %}
