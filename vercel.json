@@ -1,0 +1,18 @@
+{
+    "builds":[
+        {
+            "src":"onlinefood/wsgi.py",
+            "use":"@vercel/python",
+            "config":{
+                "maxLambadasize":"15mb",
+                "runtime":"python 3.12"
+            }
+        }
+    ],
+    "routes":[
+        {
+                "src":"/(.*)",
+                "dest":"onlinefood/wsgi.py"
+        }
+    ]
+}
